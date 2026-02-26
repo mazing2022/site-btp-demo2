@@ -1,0 +1,895 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatiNova Provence | Entreprise générale du bâtiment</title>
+  <meta name="description" content="BatiNova Provence accompagne les particuliers et les professionnels pour leurs travaux de rénovation, couverture, maçonnerie, désamiantage et terrassement en région PACA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-alt: #eef3f9;
+      --ink: #10243c;
+      --muted: #506176;
+      --primary: #0f3b66;
+      --primary-soft: #dbe7f5;
+      --accent: #e67e22;
+      --accent-dark: #c8640f;
+      --line: #d3deeb;
+      --shadow: 0 14px 38px rgba(15, 59, 102, 0.12);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f9fbfe 0%, #f5f7fb 100%);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), 92vw);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      background: var(--primary);
+      color: #e4edf7;
+      font-size: 0.95rem;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      flex-wrap: wrap;
+    }
+
+    .topbar strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(211, 222, 235, 0.7);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--primary);
+    }
+
+    .logo span {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--primary);
+      outline: none;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      font-family: "Outfit", sans-serif;
+      font-weight: 600;
+      padding: 0.72rem 1.35rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .cta-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(230, 126, 34, 0.3);
+    }
+
+    .cta-primary:hover,
+    .cta-primary:focus-visible {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .cta-secondary {
+      background: #ffffff;
+      color: var(--primary);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      padding: 5.2rem 0 3.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(219, 231, 245, 0.9), rgba(245, 247, 251, 0));
+      top: -200px;
+      right: -120px;
+    }
+
+    .hero::after {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(230, 126, 34, 0.15), rgba(245, 247, 251, 0));
+      left: -130px;
+      bottom: -180px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 62ch;
+      margin: 0 0 1.7rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.4rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-note span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(211, 222, 235, 0.7);
+      transform: translateY(0);
+      animation: rise 700ms ease 80ms both;
+    }
+
+    .hero-card img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card-content {
+      padding: 1rem 1.2rem 1.3rem;
+    }
+
+    .hero-card-title {
+      font-family: "Outfit", sans-serif;
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card-text {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .trust {
+      margin-top: 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 0.4rem;
+    }
+
+    .trust-item strong {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+      display: block;
+      line-height: 1;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-tag {
+      font-family: "Outfit", sans-serif;
+      color: var(--accent-dark);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+    }
+
+    .section-head h2 {
+      font-family: "Outfit", sans-serif;
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+    }
+
+    .section-head p {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.45rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--surface-alt);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 360px;
+    }
+
+    .about-img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .pill-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem;
+      margin-top: 1.1rem;
+    }
+
+    .pill {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.55rem 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(16, 36, 60, 0.08);
+    }
+
+    .project img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+
+    .project h3 {
+      margin: 0 0 0.35rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .reviews {
+      background: var(--surface-alt);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .review {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+    }
+
+    .review p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .review strong {
+      font-family: "Outfit", sans-serif;
+      color: var(--primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+    }
+
+    .contact-card,
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(16, 36, 60, 0.07);
+    }
+
+    .contact-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-list strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Outfit", sans-serif;
+      margin-bottom: 0.15rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .field,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      font: inherit;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      grid-column: 1 / -1;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .field:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      outline: 3px solid rgba(15, 59, 102, 0.14);
+      outline-offset: 1px;
+    }
+
+    .footer {
+      background: #0b233b;
+      color: #c5d5e6;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .footer strong {
+      color: #ffffff;
+      font-family: "Outfit", sans-serif;
+      font-weight: 600;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 0.8rem;
+        padding-top: 0.55rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .nav-links {
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 3.6rem 0;
+      }
+
+      .services-grid,
+      .projects-grid,
+      .reviews-grid,
+      .form-grid,
+      .pill-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card img {
+        height: 240px;
+      }
+
+      .topbar-inner {
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div><strong>BatiNova Provence</strong> | Entreprise générale du bâtiment</div>
+        <div>Lun-Ven 7h30-18h30 | Intervention PACA</div>
+      </div>
+    </div>
+
+    <nav class="navbar" aria-label="Navigation principale">
+      <div class="container nav-inner">
+        <a href="#accueil" class="logo" aria-label="BatiNova Provence">
+          BatiNova <span>Provence</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#apropos">À propos</a>
+          <a href="#realisations">Réalisations</a>
+          <a href="#avis">Avis clients</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="cta cta-primary">Demander un devis</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h1>Votre partenaire de confiance pour tous vos travaux de bâtiment</h1>
+            <p>
+              Rénovation, couverture, maçonnerie et chantiers techniques : une équipe expérimentée,
+              un suivi clair et des délais tenus, de l'étude à la réception.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="cta cta-primary">Demander un devis gratuit</a>
+              <a href="#services" class="cta cta-secondary">Voir nos services</a>
+            </div>
+            <div class="hero-note">
+              <span>Garantie décennale</span>
+              <span>Interlocuteur unique</span>
+              <span>Devis détaillé sous 48 h</span>
+            </div>
+          </div>
+          <article class="hero-card" aria-label="Projet récent">
+            <img src="images/bg_1.jpg" alt="Équipe BTP sur un chantier de rénovation">
+            <div class="hero-card-content">
+              <h2 class="hero-card-title">Chantier livré à Aix-en-Provence</h2>
+              <p class="hero-card-text">Rénovation complète d'une villa de 180 m², toiture comprise.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="trust" aria-label="Indicateurs de confiance">
+          <div class="trust-item">
+            <strong>12+</strong>
+            <span>ans d'expérience</span>
+          </div>
+          <div class="trust-item">
+            <strong>340</strong>
+            <span>chantiers réalisés</span>
+          </div>
+          <div class="trust-item">
+            <strong>98%</strong>
+            <span>clients satisfaits</span>
+          </div>
+          <div class="trust-item">
+            <strong>24h</strong>
+            <span>pour vous rappeler</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-tag">Nos services</p>
+          <h2>Des prestations techniques pour un chantier maîtrisé</h2>
+          <p>
+            BatiNova Provence accompagne particuliers, syndics et professionnels avec des interventions adaptées
+            à votre budget, à vos contraintes et aux normes en vigueur.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Rénovation intérieure et extérieure</h3>
+            <p>Remise à neuf de maisons, appartements et locaux avec coordination de corps d'état et finitions soignées.</p>
+          </article>
+          <article class="service-card">
+            <h3>Couverture et zinguerie</h3>
+            <p>Réfection de toitures, remplacement de tuiles, étanchéité et pose de gouttières pour protéger durablement votre bien.</p>
+          </article>
+          <article class="service-card">
+            <h3>Maçonnerie générale</h3>
+            <p>Fondations, murs porteurs, extensions et reprises structurelles dans le respect des règles DTU.</p>
+          </article>
+          <article class="service-card">
+            <h3>Désamiantage</h3>
+            <p>Interventions en sous-section 4 avec procédures sécurisées, confinement et traçabilité complète des déchets.</p>
+          </article>
+          <article class="service-card">
+            <h3>Terrassement et VRD</h3>
+            <p>Préparation de terrain, nivellement, tranchées techniques et raccordements pour un chantier propre et stable.</p>
+          </article>
+          <article class="service-card">
+            <h3>Maintenance et dépannage</h3>
+            <p>Interventions rapides sur sinistres, infiltrations et dégradations avec diagnostic clair et priorisation des urgences.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="apropos">
+      <div class="container about-grid">
+        <div class="about-img">
+          <img src="images/about.jpg" alt="Conducteur de travaux en réunion de chantier">
+        </div>
+        <div>
+          <header class="section-head">
+            <p class="section-tag">À propos</p>
+            <h2>Une PME familiale ancrée sur le terrain</h2>
+            <p>
+              Créée en 2014, BatiNova Provence intervient sur Marseille, Aix-en-Provence et leurs alentours.
+              Notre force : des équipes stables, des partenaires locaux fiables et une communication transparente
+              tout au long du chantier.
+            </p>
+          </header>
+          <div class="pill-list" aria-label="Valeurs de l'entreprise">
+            <div class="pill">Qualité d'exécution</div>
+            <div class="pill">Sécurité des équipes</div>
+            <div class="pill">Respect des délais</div>
+            <div class="pill">Suivi client rigoureux</div>
+          </div>
+          <p style="margin-top: 1.1rem; color: var(--muted);">
+            Chaque projet est préparé avec un chiffrage détaillé, un planning réaliste et un interlocuteur unique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-tag">Réalisations</p>
+          <h2>Chantiers récents</h2>
+          <p>Quelques exemples de projets livrés ces derniers mois en habitat individuel et en petit collectif.</p>
+        </header>
+        <div class="projects-grid">
+          <article class="project">
+            <img src="images/project-1.jpg" alt="Rénovation d'une maison individuelle">
+            <div class="project-content">
+              <h3>Rénovation complète - Maison à Cassis</h3>
+              <p>Reprise des cloisons, isolation, sols et remise en peinture avec livraison en 10 semaines.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="images/project-3.jpg" alt="Travaux de toiture sur immeuble">
+            <div class="project-content">
+              <h3>Réfection de toiture - Immeuble à Marseille 8e</h3>
+              <p>Dépose des éléments défaillants, étanchéité renforcée et zinguerie neuve sur 420 m².</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="images/project-6.jpg" alt="Chantier de maçonnerie pour extension">
+            <div class="project-content">
+              <h3>Extension en maçonnerie - Villa à Gardanne</h3>
+              <p>Création d'une extension de 35 m² avec fondations, élévation et raccordements extérieurs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="avis">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-tag">Avis clients</p>
+          <h2>Ils nous ont confié leurs travaux</h2>
+          <p>Des retours terrain qui reflètent notre façon de travailler : claire, sérieuse et sans surprise.</p>
+        </header>
+        <div class="reviews-grid">
+          <article class="review">
+            <p>« Équipe ponctuelle et chantier très propre. Le planning annoncé a été respecté du début à la fin. »</p>
+            <strong>Claire M. - Rénovation appartement, Aix-en-Provence</strong>
+          </article>
+          <article class="review">
+            <p>« Nous avions une urgence d'infiltration. Diagnostic rapide, devis détaillé et intervention efficace. »</p>
+            <strong>Nicolas R. - Réfection de toiture, Marseille</strong>
+          </article>
+          <article class="review">
+            <p>« Bon suivi de chantier et bonne coordination entre les corps de métier. Je recommande sans hésitation. »</p>
+            <strong>Syndic Les Oliviers - Travaux en copropriété</strong>
+          </article>
+          <article class="review">
+            <p>« Le conducteur de travaux nous a tenus informés chaque semaine. Résultat conforme et finitions nettes. »</p>
+            <strong>Sophie et Julien T. - Extension maison, Gardanne</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <article class="contact-card">
+          <header class="section-head" style="margin-bottom: 0.3rem;">
+            <p class="section-tag">Contact</p>
+            <h2>Parlons de votre projet</h2>
+            <p>Décrivez vos besoins et recevez une première estimation rapidement.</p>
+          </header>
+          <ul class="contact-list">
+            <li>
+              <strong>Téléphone</strong>
+              04 91 58 24 67
+            </li>
+            <li>
+              <strong>Email</strong>
+              contact@batinova-provence.fr
+            </li>
+            <li>
+              <strong>Adresse</strong>
+              18 rue Jean Mermoz, 13008 Marseille
+            </li>
+          </ul>
+          <div style="margin-top: 1.1rem;">
+            <a href="tel:+33491582467" class="cta cta-primary">Appeler maintenant</a>
+          </div>
+        </article>
+
+        <form class="form-card" action="#" method="post" aria-label="Formulaire de contact">
+          <div class="form-grid">
+            <label class="full" for="nom">Nom et prénom</label>
+            <input class="field full" id="nom" name="nom" type="text" placeholder="Votre nom" required>
+
+            <label for="email">Email</label>
+            <label for="telephone">Téléphone</label>
+            <input class="field" id="email" name="email" type="email" placeholder="vous@email.fr" required>
+            <input class="field" id="telephone" name="telephone" type="tel" placeholder="06 12 34 56 78" required>
+
+            <label for="service">Type de travaux</label>
+            <select id="service" name="service">
+              <option>Rénovation</option>
+              <option>Couverture</option>
+              <option>Maçonnerie</option>
+              <option>Désamiantage</option>
+              <option>Terrassement</option>
+              <option>Autre</option>
+            </select>
+
+            <label for="message" class="full">Votre message</label>
+            <textarea id="message" name="message" placeholder="Expliquez votre projet : surface, délai souhaité, localisation..." required></textarea>
+          </div>
+          <div style="margin-top: 0.9rem; display: flex; justify-content: flex-start;">
+            <button type="submit" class="cta cta-primary">Envoyer ma demande</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>BatiNova Provence</strong> | Construire, rénover, sécuriser.</div>
+      <div>SIRET fictif : 824 563 917 00027 | Tous droits réservés <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
