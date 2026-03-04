@@ -84,12 +84,8 @@
 	});
 
 
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
-
-	// scroll
-	var scrollWindow = function() {
+		// scroll
+		var scrollWindow = function() {
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
@@ -232,4 +228,3 @@
 
 
 })(jQuery);
-

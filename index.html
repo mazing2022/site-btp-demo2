@@ -3,893 +3,509 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TONENTREPRISE | Entreprise générale du bâtiment</title>
-  <meta name="description" content="TONENTREPRISE accompagne les particuliers et les professionnels pour leurs travaux de rénovation, couverture, maçonnerie, désamiantage et terrassement en région PACA.">
+  <title>DEMOTOITURE | Couvreur, toiture et zinguerie premium</title>
+  <meta name="description" content="DEMOTOITURE réalise vos travaux de couverture, zinguerie, rénovation de toiture, recherche de fuite et entretien avec une exécution soignée et durable.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23161f29' d='M3 15.2 16 4l13 11.2V28H3z'/%3E%3Cpath fill='%231f4f86' d='M13.2 28V16.5h5.6V28z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --surface: #ffffff;
-      --surface-alt: #eef3f9;
-      --ink: #10243c;
-      --muted: #506176;
-      --primary: #0f3b66;
-      --primary-soft: #dbe7f5;
-      --accent: #e67e22;
-      --accent-dark: #c8640f;
-      --line: #d3deeb;
-      --shadow: 0 14px 38px rgba(15, 59, 102, 0.12);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --max: 1140px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Source Sans 3", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #f9fbfe 0%, #f5f7fb 100%);
-      line-height: 1.5;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(var(--max), 92vw);
-      margin-inline: auto;
-    }
-
-    .topbar {
-      background: var(--primary);
-      color: #e4edf7;
-      font-size: 0.95rem;
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.6rem 0;
-      flex-wrap: wrap;
-    }
-
-    .topbar strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(211, 222, 235, 0.7);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.9rem 0;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.35rem;
-      font-family: "Outfit", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--primary);
-    }
-
-    .logo span {
-      color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--primary);
-      outline: none;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      border-radius: 999px;
-      font-family: "Outfit", sans-serif;
-      font-weight: 600;
-      padding: 0.72rem 1.35rem;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .cta-primary {
-      background: var(--accent);
-      color: #ffffff;
-      box-shadow: 0 10px 24px rgba(230, 126, 34, 0.3);
-    }
-
-    .cta-primary:hover,
-    .cta-primary:focus-visible {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .cta-secondary {
-      background: #ffffff;
-      color: var(--primary);
-      border: 1px solid var(--line);
-    }
-
-    .hero {
-      padding: 5.2rem 0 3.8rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .hero::before {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(219, 231, 245, 0.9), rgba(245, 247, 251, 0));
-      top: -200px;
-      right: -120px;
-    }
-
-    .hero::after {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(230, 126, 34, 0.15), rgba(245, 247, 251, 0));
-      left: -130px;
-      bottom: -180px;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-family: "Outfit", sans-serif;
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1.1;
-      margin: 0 0 1rem;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.15rem;
-      max-width: 62ch;
-      margin: 0 0 1.7rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-note {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.4rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .hero-note span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .hero-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      border: 1px solid rgba(211, 222, 235, 0.7);
-      transform: translateY(0);
-      animation: rise 700ms ease 80ms both;
-    }
-
-    .hero-card img {
-      height: 300px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .hero-card-content {
-      padding: 1rem 1.2rem 1.3rem;
-    }
-
-    .hero-card-title {
-      font-family: "Outfit", sans-serif;
-      margin: 0 0 0.25rem;
-      font-size: 1.1rem;
-    }
-
-    .hero-card-text {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .trust {
-      margin-top: 1.2rem;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.8rem;
-    }
-
-    .trust-item {
-      text-align: center;
-      padding: 0.4rem;
-    }
-
-    .trust-item strong {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.5rem;
-      color: var(--primary);
-      display: block;
-      line-height: 1;
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    section {
-      padding: 4.5rem 0;
-    }
-
-    .section-head {
-      margin-bottom: 1.8rem;
-    }
-
-    .section-tag {
-      font-family: "Outfit", sans-serif;
-      color: var(--accent-dark);
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin: 0 0 0.35rem;
-    }
-
-    .section-head h2 {
-      font-family: "Outfit", sans-serif;
-      margin: 0;
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
-    }
-
-    .section-head p {
-      margin: 0.6rem 0 0;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .service-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 1.2rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .service-card h3 {
-      margin: 0 0 0.45rem;
-      font-family: "Outfit", sans-serif;
-      font-size: 1.2rem;
-      color: var(--primary);
-    }
-
-    .service-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .about {
-      background: var(--surface-alt);
-    }
-
-    .about-grid {
-      display: grid;
-      gap: 1.8rem;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-    }
-
-    .about-img {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      min-height: 360px;
-    }
-
-    .about-img img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .pill-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.7rem;
-      margin-top: 1.1rem;
-    }
-
-    .pill {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.55rem 0.85rem;
-      color: var(--muted);
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .project {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(16, 36, 60, 0.08);
-    }
-
-    .project img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .project-content {
-      padding: 1rem;
-    }
-
-    .project h3 {
-      margin: 0 0 0.35rem;
-      font-family: "Outfit", sans-serif;
-      font-size: 1.1rem;
-      color: var(--primary);
-    }
-
-    .project p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .reviews {
-      background: var(--surface-alt);
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .review {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 1.1rem;
-    }
-
-    .review p {
-      margin: 0 0 0.8rem;
-      color: var(--muted);
-    }
-
-    .review strong {
-      font-family: "Outfit", sans-serif;
-      color: var(--primary);
-    }
-
-    .contact-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: start;
-    }
-
-    .contact-card,
-    .form-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 1.2rem;
-      box-shadow: 0 8px 20px rgba(16, 36, 60, 0.07);
-    }
-
-    .contact-list {
-      margin: 1rem 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 0.8rem;
-      color: var(--muted);
-    }
-
-    .contact-list strong {
-      display: block;
-      color: var(--ink);
-      font-family: "Outfit", sans-serif;
-      margin-bottom: 0.15rem;
-    }
-
-    .form-grid {
-      display: grid;
-      gap: 0.8rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .field,
-    textarea,
-    select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 0.65rem 0.75rem;
-      font: inherit;
-      color: var(--ink);
-      background: #ffffff;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-      grid-column: 1 / -1;
-    }
-
-    .full {
-      grid-column: 1 / -1;
-    }
-
-    .field:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--primary);
-      outline: 3px solid rgba(15, 59, 102, 0.14);
-      outline-offset: 1px;
-    }
-
-    .footer {
-      background: #0b233b;
-      color: #c5d5e6;
-      padding: 2rem 0;
-      margin-top: 3rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-    }
-
-    .footer strong {
-      color: #ffffff;
-      font-family: "Outfit", sans-serif;
-      font-weight: 600;
-    }
-
-    @keyframes rise {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .nav-inner {
-        flex-wrap: wrap;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 0.8rem;
-        padding-top: 0.55rem;
-        border-top: 1px solid var(--line);
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid,
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .trust {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        padding-top: 4rem;
-      }
-
-      .nav-links {
-        font-size: 0.95rem;
-      }
-
-      section {
-        padding: 3.6rem 0;
-      }
-
-      .services-grid,
-      .projects-grid,
-      .reviews-grid,
-      .form-grid,
-      .pill-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card img {
-        height: 240px;
-      }
-
-      .topbar-inner {
-        font-size: 0.88rem;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/roofing/hero.jpg">
+  <link rel="stylesheet" href="css/roofing-premium.css">
 </head>
 <body>
-  <header>
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div><strong>TONENTREPRISE</strong> | Entreprise générale du bâtiment</div>
-        <div>Lun-Ven 7h30-18h30 | Intervention PACA</div>
-      </div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p><strong>DEMOTOITURE</strong> | Couverture, rénovation de toit et zinguerie</p>
+      <p>Lun.-Sam. 7 h 30-19 h 30 | Devis détaillé sous 48 h | Urgence infiltrations</p>
     </div>
+  </div>
 
-    <nav class="navbar" aria-label="Navigation principale">
-      <div class="container nav-inner">
-        <a href="#accueil" class="logo" aria-label="TONENTREPRISE">
-          TONENTREPRISE
-        </a>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#apropos">À propos</a>
-          <a href="#realisations">Réalisations</a>
-          <a href="#avis">Avis clients</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a href="#contact" class="cta cta-primary">Demander un devis</a>
-      </div>
-    </nav>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#accueil" aria-label="DEMOTOITURE">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">
+          <span class="logo-main">DEMOTOITURE</span>
+          <span class="logo-sub">Couvreur zingueur</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Ouvrir le menu principal">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#contact">Devis</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#contact">Demander un devis</a>
+    </div>
   </header>
 
   <main>
     <section class="hero" id="accueil">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <h1>Votre partenaire de confiance pour tous vos travaux de bâtiment</h1>
-            <p>
-              Rénovation, couverture, maçonnerie et chantiers techniques : une équipe expérimentée,
-              un suivi clair et des délais tenus, de l'étude à la réception.
-            </p>
-            <div class="hero-actions">
-              <a href="#contact" class="cta cta-primary">Demander un devis gratuit</a>
-              <a href="#services" class="cta cta-secondary">Voir nos services</a>
-            </div>
-            <div class="hero-note">
-              <span>Garantie décennale</span>
-              <span>Interlocuteur unique</span>
-              <span>Devis détaillé sous 48 h</span>
-            </div>
+      <div class="hero-media" data-parallax data-speed="0.14" data-scale="1.08" aria-hidden="true"></div>
+      <div class="hero-grid container">
+        <div class="hero-content reveal">
+          <p class="hero-kicker">Entreprise artisanale de couverture depuis 2012</p>
+          <h1>Votre toiture entre les mains de couvreurs exigeants</h1>
+          <p class="hero-lead">
+            Réfection, dépannage, zinguerie et entretien pour maisons individuelles et petits bâtiments.
+            Nous privilégions un diagnostic clair, une exécution propre et des finitions durables pour protéger votre habitation dans le temps.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Demander un devis</a>
+            <a class="btn btn-outline" href="#realisations">Voir nos réalisations</a>
           </div>
-          <article class="hero-card" aria-label="Projet récent">
-            <img src="images/bg_1.jpg" alt="Équipe BTP sur un chantier de rénovation">
-            <div class="hero-card-content">
-              <h2 class="hero-card-title">Chantier livré à Aix-en-Provence</h2>
-              <p class="hero-card-text">Rénovation complète d'une villa de 180 m², toiture comprise.</p>
-            </div>
-          </article>
+
+          <ul class="hero-badges" aria-label="Éléments de réassurance">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.7-7 10-3.5-1.3-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/><path d="M9 12.2l2.1 2.1L15.5 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Garantie décennale
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m13 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Intervention rapide
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              Devis détaillé sous 48 h
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 9 16l10-10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 4h18v16H3z" stroke="currentColor" stroke-width="1.8"/></svg>
+              Chantier soigné et propre
+            </li>
+          </ul>
         </div>
 
-        <div class="trust" aria-label="Indicateurs de confiance">
-          <div class="trust-item">
-            <strong>12+</strong>
-            <span>ans d'expérience</span>
+        <aside class="hero-panel reveal" aria-label="Procédure d'intervention">
+          <p class="panel-eyebrow">Urgence toiture</p>
+          <h2>Fuite ou sinistre après intempéries ?</h2>
+          <p>Nous mettons rapidement votre bien hors d'eau, identifions l'origine de l'infiltration et planifions une réparation pérenne, avec suivi photo à chaque étape.</p>
+
+          <ul class="panel-steps">
+            <li><span>1</span>Inspection visuelle et repérage des points d'entrée d'eau</li>
+            <li><span>2</span>Plan de travaux chiffré, poste par poste</li>
+            <li><span>3</span>Intervention sécurisée en hauteur</li>
+            <li><span>4</span>Contrôle final et compte rendu de chantier</li>
+          </ul>
+
+          <div class="panel-contact">
+            <p>Un besoin immédiat ?</p>
+            <a href="tel:+33491582467">04 91 58 24 67</a>
           </div>
-          <div class="trust-item">
-            <strong>340</strong>
-            <span>chantiers réalisés</span>
-          </div>
-          <div class="trust-item">
-            <strong>98%</strong>
-            <span>clients satisfaits</span>
-          </div>
-          <div class="trust-item">
-            <strong>24h</strong>
-            <span>pour vous rappeler</span>
-          </div>
+        </aside>
+      </div>
+
+      <div class="container">
+        <div class="hero-metrics reveal" aria-label="Indicateurs de confiance">
+          <article class="metric-card">
+            <p class="metric-value" data-counter data-value="14" data-suffix="+">14+</p>
+            <p>ans d'expérience en couverture</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-value" data-counter data-value="520">520</p>
+            <p>toitures rénovées, réparées ou entretenues</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-value" data-counter data-value="4.9" data-decimals="1" data-suffix="/5">4.9/5</p>
+            <p>note moyenne vérifiée</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-value" data-counter data-value="98" data-suffix="%">98%</p>
+            <p>interventions livrées dans les délais annoncés</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="services">
+    <section class="section roofline" id="services">
       <div class="container">
-        <header class="section-head">
-          <p class="section-tag">Nos services</p>
-          <h2>Des prestations techniques pour un chantier maîtrisé</h2>
+        <header class="section-head reveal">
+          <p class="section-label">Nos services toiture</p>
+          <h2>Des prestations complètes, du premier diagnostic aux finitions</h2>
           <p>
-            TONENTREPRISE accompagne particuliers, syndics et professionnels avec des interventions adaptées
-            à votre budget, à vos contraintes et aux normes en vigueur.
+            Nos interventions suivent une méthode claire : analyse de l'existant, préconisations adaptées au bâtiment,
+            exécution maîtrisée et vérification finale. Vous avancez avec des choix techniques justifiés et un budget lisible.
           </p>
         </header>
 
         <div class="services-grid">
-          <article class="service-card">
-            <h3>Rénovation intérieure et extérieure</h3>
-            <p>Remise à neuf de maisons, appartements et locaux avec coordination de corps d'état et finitions soignées.</p>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 10.8V20h14v-9.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Rénovation complète de toiture</h3>
+            <p>Dépose de la couverture existante, reprise du support et pose d'un système neuf adapté à votre bâti.</p>
           </article>
-          <article class="service-card">
-            <h3>Couverture et zinguerie</h3>
-            <p>Réfection de toitures, remplacement de tuiles, étanchéité et pose de gouttières pour protéger durablement votre bien.</p>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4s5 5 5 8a5 5 0 1 1-10 0c0-3 5-8 5-8z" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 14.5c.3.8 1.1 1.4 2 1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Recherche de fuite et réparation ciblée</h3>
+            <p>Détection précise des infiltrations, correction des causes et contrôle d'étanchéité en fin d'intervention.</p>
           </article>
-          <article class="service-card">
-            <h3>Maçonnerie générale</h3>
-            <p>Fondations, murs porteurs, extensions et reprises structurelles dans le respect des règles DTU.</p>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M6 7v10h12V7" stroke="currentColor" stroke-width="1.8"/><path d="M12 7V4M7 17l3-5h4l3 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Zinguerie et étanchéité</h3>
+            <p>Façonnage et reprise des noues, rives, solins et habillages zinc pour sécuriser les jonctions sensibles.</p>
           </article>
-          <article class="service-card">
-            <h3>Désamiantage</h3>
-            <p>Interventions en sous-section 4 avec procédures sécurisées, confinement et traçabilité complète des déchets.</p>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M6 8h12M8 16h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 19l2-2m14 2-2-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Nettoyage et démoussage de toiture</h3>
+            <p>Nettoyage raisonné, traitement antimousse et protection hydrofuge selon le matériau de couverture.</p>
           </article>
-          <article class="service-card">
-            <h3>Terrassement et VRD</h3>
-            <p>Préparation de terrain, nivellement, tranchées techniques et raccordements pour un chantier propre et stable.</p>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 9h18v8H3z" stroke="currentColor" stroke-width="1.8"/><path d="M7 17v3m10-3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 9V6h14v3" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Pose et remplacement de gouttières</h3>
+            <p>Installation ou remplacement des gouttières et descentes avec réglage précis des pentes d'évacuation.</p>
           </article>
-          <article class="service-card">
-            <h3>Maintenance et dépannage</h3>
-            <p>Interventions rapides sur sinistres, infiltrations et dégradations avec diagnostic clair et priorisation des urgences.</p>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 18h14M7 18V8l5-3 5 3v10" stroke="currentColor" stroke-width="1.8"/><path d="M10 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Isolation sous toiture</h3>
+            <p>Isolation des combles ou rampants pour améliorer le confort thermique et réduire les pertes énergétiques.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v6M5.6 6.6l4.2 4.2M3 13h6M5.6 19.4l4.2-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 13h8l-3.5 7h-4L13 13z" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Dépannage après intempéries</h3>
+            <p>Mise hors d'eau d'urgence, sécurisation du site puis réparation définitive après diagnostic.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 20V9l5-4 5 4v11" stroke="currentColor" stroke-width="1.8"/><path d="M10 13h4v4h-4z" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Entretien préventif programmé</h3>
+            <p>Visites planifiées et rapport photo pour anticiper les désordres avant qu'ils ne deviennent coûteux.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="about" id="apropos">
+    <section class="section section-alt roofline" id="apropos">
       <div class="container about-grid">
-        <div class="about-img">
-          <img src="images/about.jpg" alt="Conducteur de travaux en réunion de chantier">
-        </div>
-        <div>
-          <header class="section-head">
-            <p class="section-tag">À propos</p>
-            <h2>Une PME familiale ancrée sur le terrain</h2>
-            <p>
-              Créée en 2014, TONENTREPRISE intervient sur Marseille, Aix-en-Provence et leurs alentours.
-              Notre force : des équipes stables, des partenaires locaux fiables et une communication transparente
-              tout au long du chantier.
-            </p>
-          </header>
-          <div class="pill-list" aria-label="Valeurs de l'entreprise">
-            <div class="pill">Qualité d'exécution</div>
-            <div class="pill">Sécurité des équipes</div>
-            <div class="pill">Respect des délais</div>
-            <div class="pill">Suivi client rigoureux</div>
-          </div>
-          <p style="margin-top: 1.1rem; color: var(--muted);">
-            Chaque projet est préparé avec un chiffrage détaillé, un planning réaliste et un interlocuteur unique.
+        <figure class="about-media reveal">
+          <img src="images/roofing/about.jpg" alt="Chantier de rénovation de toiture sur maison avec échafaudage" loading="lazy">
+          <figcaption class="about-media-note">
+            <p>Diagnostic en 3 temps</p>
+            <strong>Inspection, priorités, plan de travaux chiffré</strong>
+          </figcaption>
+        </figure>
+
+        <article class="about-content reveal">
+          <p class="section-label">À propos</p>
+          <h2>Un savoir-faire artisanal structuré par une méthode professionnelle</h2>
+          <p>
+            DEMOTOITURE accompagne les particuliers, syndics et gestionnaires qui attendent une intervention lisible et fiable.
+            Nos équipes interviennent avec EPI, procédures de sécurité et pilotage de chantier précis, du premier constat à la réception finale.
           </p>
-        </div>
-      </div>
-    </section>
 
-    <section id="realisations">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-tag">Réalisations</p>
-          <h2>Chantiers récents</h2>
-          <p>Quelques exemples de projets livrés ces derniers mois en habitat individuel et en petit collectif.</p>
-        </header>
-        <div class="projects-grid">
-          <article class="project">
-            <img src="images/project-1.jpg" alt="Rénovation d'une maison individuelle">
-            <div class="project-content">
-              <h3>Rénovation complète - Maison à Cassis</h3>
-              <p>Reprise des cloisons, isolation, sols et remise en peinture avec livraison en 10 semaines.</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="images/project-3.jpg" alt="Travaux de toiture sur immeuble">
-            <div class="project-content">
-              <h3>Réfection de toiture - Immeuble à Marseille 8e</h3>
-              <p>Dépose des éléments défaillants, étanchéité renforcée et zinguerie neuve sur 420 m².</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="images/project-6.jpg" alt="Chantier de maçonnerie pour extension">
-            <div class="project-content">
-              <h3>Extension en maçonnerie - Villa à Gardanne</h3>
-              <p>Création d'une extension de 35 m² avec fondations, élévation et raccordements extérieurs.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reviews" id="avis">
-      <div class="container">
-        <header class="section-head">
-          <p class="section-tag">Avis clients</p>
-          <h2>Ils nous ont confié leurs travaux</h2>
-          <p>Des retours terrain qui reflètent notre façon de travailler : claire, sérieuse et sans surprise.</p>
-        </header>
-        <div class="reviews-grid">
-          <article class="review">
-            <p>« Équipe ponctuelle et chantier très propre. Le planning annoncé a été respecté du début à la fin. »</p>
-            <strong>Claire M. - Rénovation appartement, Aix-en-Provence</strong>
-          </article>
-          <article class="review">
-            <p>« Nous avions une urgence d'infiltration. Diagnostic rapide, devis détaillé et intervention efficace. »</p>
-            <strong>Nicolas R. - Réfection de toiture, Marseille</strong>
-          </article>
-          <article class="review">
-            <p>« Bon suivi de chantier et bonne coordination entre les corps de métier. Je recommande sans hésitation. »</p>
-            <strong>Syndic Les Oliviers - Travaux en copropriété</strong>
-          </article>
-          <article class="review">
-            <p>« Le conducteur de travaux nous a tenus informés chaque semaine. Résultat conforme et finitions nettes. »</p>
-            <strong>Sophie et Julien T. - Extension maison, Gardanne</strong>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container contact-grid">
-        <article class="contact-card">
-          <header class="section-head" style="margin-bottom: 0.3rem;">
-            <p class="section-tag">Contact</p>
-            <h2>Parlons de votre projet</h2>
-            <p>Décrivez vos besoins et recevez une première estimation rapidement.</p>
-          </header>
-          <ul class="contact-list">
-            <li>
-              <strong>Téléphone</strong>
-              04 91 58 24 67
-            </li>
-            <li>
-              <strong>Email</strong>
-              contact@tonentreprise.fr
-            </li>
-            <li>
-              <strong>Adresse</strong>
-              18 rue Jean Mermoz, 13008 Marseille
-            </li>
+          <ul class="about-points" aria-label="Forces de l'entreprise">
+            <li>Inspection précise avec photos commentées et priorisation des urgences</li>
+            <li>Accompagnement client du devis initial jusqu'à la réception des travaux</li>
+            <li>Protection des abords et nettoyage quotidien du chantier</li>
+            <li>Planning suivi avec points d'avancement clairs à chaque étape</li>
           </ul>
-          <div style="margin-top: 1.1rem;">
-            <a href="tel:+33491582467" class="cta cta-primary">Appeler maintenant</a>
+
+          <div class="about-stats" aria-label="Chiffres clés">
+            <article>
+              <p class="stat-value" data-counter data-value="48" data-suffix="h">48h</p>
+              <p>pour recevoir un devis détaillé</p>
+            </article>
+            <article>
+              <p class="stat-value" data-counter data-value="24" data-suffix="/7">24/7</p>
+              <p>astreinte météo lors d'épisodes critiques</p>
+            </article>
+            <article>
+              <p class="stat-value" data-counter data-value="10" data-suffix=" ans">10 ans</p>
+              <p>garantie décennale sur travaux couverts</p>
+            </article>
           </div>
         </article>
+      </div>
+    </section>
 
-        <form class="form-card" action="#" method="post" aria-label="Formulaire de contact">
-          <div class="form-grid">
-            <label class="full" for="nom">Nom et prénom</label>
-            <input class="field full" id="nom" name="nom" type="text" placeholder="Votre nom" required>
+    <section class="section" id="realisations">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">Réalisations récentes</p>
+          <h2>Des chantiers documentés qui illustrent notre niveau d'exigence</h2>
+          <p>
+            Une sélection de chantiers en rénovation, dépannage, zinguerie et entretien.
+            Chaque réalisation montre notre méthode : préparation soignée, exécution maîtrisée et finitions propres.
+          </p>
+        </header>
 
-            <label for="email">Email</label>
-            <label for="telephone">Téléphone</label>
-            <input class="field" id="email" name="email" type="email" placeholder="vous@email.fr" required>
-            <input class="field" id="telephone" name="telephone" type="tel" placeholder="06 12 34 56 78" required>
+        <div class="project-controls reveal" role="tablist" aria-label="Filtrer les réalisations">
+          <button class="filter-btn is-active" data-filter="all" type="button">Tous</button>
+          <button class="filter-btn" data-filter="renovation" type="button">Rénovation</button>
+          <button class="filter-btn" data-filter="fuite" type="button">Fuite</button>
+          <button class="filter-btn" data-filter="zinguerie" type="button">Zinguerie</button>
+          <button class="filter-btn" data-filter="entretien" type="button">Entretien</button>
+          <button class="filter-btn" data-filter="hauteur" type="button">Hauteur</button>
+        </div>
 
-            <label for="service">Type de travaux</label>
-            <select id="service" name="service">
-              <option>Rénovation</option>
-              <option>Couverture</option>
-              <option>Maçonnerie</option>
-              <option>Désamiantage</option>
-              <option>Terrassement</option>
-              <option>Autre</option>
-            </select>
+        <div class="projects-grid">
+          <article class="project-card project-span-6 project-tall reveal" data-category="renovation">
+            <img src="images/roofing/project-before.jpg" alt="Toiture avant rénovation complète" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Avant</p>
+              <h3>Toiture ancienne et support fragilisé</h3>
+              <p>Dépose complète de la couverture et reprise des zones dégradées avant reconstruction.</p>
+            </div>
+          </article>
 
-            <label for="message" class="full">Votre message</label>
-            <textarea id="message" name="message" placeholder="Expliquez votre projet : surface, délai souhaité, localisation..." required></textarea>
+          <article class="project-card project-span-6 project-tall reveal" data-category="renovation">
+            <img src="images/roofing/project-after.jpg" alt="Toiture en tuiles après rénovation" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Après</p>
+              <h3>Réfection complète avec finitions en tuiles</h3>
+              <p>Pose de la nouvelle couverture, alignement des rives et contrôle final d'étanchéité.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-4 reveal" data-category="fuite entretien">
+            <img src="images/roofing/project-fuite.jpg" alt="Fuite en toiture avec ruissellement" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Fuite</p>
+              <h3>Infiltration localisée en rive</h3>
+              <p>Traitement du point d'entrée d'eau et reprise de la protection périphérique.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-8 reveal" data-category="zinguerie entretien">
+            <img src="images/roofing/project-gouttiere-safe.jpg" alt="Entretien de toiture et évacuation des eaux" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Gouttières</p>
+              <h3>Remise à niveau de l'évacuation des eaux pluviales</h3>
+              <p>Nettoyage, remplacement des éléments déformés et correction des pentes de collecte.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-4 reveal" data-category="renovation">
+            <img src="images/roofing/project-charpente.jpg" alt="Support de toiture visible avant repose" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Structure</p>
+              <h3>Préparation du support avant repose</h3>
+              <p>Réglage et renforcement de la base avant la mise en œuvre des matériaux définitifs.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-4 reveal" data-category="hauteur">
+            <img src="images/roofing/project-hauteur.jpg" alt="Intervention technique en hauteur sur façade et toiture" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Hauteur</p>
+              <h3>Intervention sur accès technique complexe</h3>
+              <p>Équipe équipée EPI et protocole strict pour intervenir en sécurité sur une zone sensible.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-4 reveal" data-category="zinguerie">
+            <img src="images/roofing/project-zinc.jpg" alt="Intervenant sur toiture métallique de type zinc" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Zinguerie</p>
+              <h3>Finitions zinc sur toiture métallique</h3>
+              <p>Reprise des jonctions, des soudures et des points de dilatation pour fiabiliser l'ensemble.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-4 reveal" data-category="entretien">
+            <img src="images/roofing/project-demoussage.jpg" alt="Démoussage préventif sur toiture tuiles" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Entretien</p>
+              <h3>Démoussage et protection préventive</h3>
+              <p>Nettoyage contrôlé pour préserver la longévité des tuiles et limiter l'encrassement.</p>
+            </div>
+          </article>
+
+          <article class="project-card project-span-8 reveal" data-category="renovation">
+            <img src="images/roofing/project-aerial.jpg" alt="Vue aérienne d'une toiture métallique en rénovation" loading="lazy">
+            <div class="project-overlay">
+              <p class="project-kicker">Couverture métallique</p>
+              <h3>Réhabilitation complète en bac acier</h3>
+              <p>Pose modulaire, reprise des fixations et contrôle de continuité d'étanchéité.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark roofline" id="avis">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-label">Avis clients</p>
+          <h2>La confiance se construit sur des engagements tenus et un travail soigné</h2>
+          <p>Nos clients soulignent la clarté du suivi, la qualité des finitions et le respect des délais annoncés.</p>
+        </header>
+
+        <div class="reviews-layout">
+          <aside class="rating-card reveal" aria-label="Note moyenne">
+            <p class="rating-label">Satisfaction client</p>
+            <p class="rating-score" data-counter data-value="4.9" data-decimals="1" data-suffix="/5">4.9/5</p>
+            <p class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="rating-text">Basée sur des retours récents en rénovation de toiture, dépannage d'infiltrations et travaux de zinguerie.</p>
+            <a class="btn btn-light" href="#contact">Demander un diagnostic</a>
+          </aside>
+
+          <div class="reviews-grid">
+            <article class="review-card reveal">
+              <p class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p>"Diagnostic détaillé avec photos, puis intervention parfaitement organisée. Le résultat est impeccable."</p>
+              <p class="review-meta">Laurent M. | Réparation de fuite en toiture, Marseille 12e</p>
+            </article>
+
+            <article class="review-card reveal">
+              <p class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p>"Équipe ponctuelle, chantier nettoyé chaque soir et vraie qualité de finition sur les gouttières et les rives."</p>
+              <p class="review-meta">Claire et Théo P. | Réfection complète, Allauch</p>
+            </article>
+
+            <article class="review-card reveal">
+              <p class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p>"Après un épisode orageux, la mise en sécurité a été immédiate. La réparation définitive a été réalisée sans mauvaise surprise."</p>
+              <p class="review-meta">Syndic Résidence Bellevue | Dépannage intempéries</p>
+            </article>
+
+            <article class="review-card reveal">
+              <p class="review-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+              <p>"Devis clair, délais respectés et finitions soignées. Une entreprise sérieuse et transparente."</p>
+              <p class="review-meta">Nadia R. | Rénovation tuiles + isolation, Aubagne</p>
+            </article>
           </div>
-          <div style="margin-top: 0.9rem; display: flex; justify-content: flex-start;">
-            <button type="submit" class="cta cta-primary">Envoyer ma demande</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="contact-panel reveal">
+          <p class="section-label">Contact / Devis</p>
+          <h2>Parlez-nous de votre toiture, nous vous guidons étape par étape</h2>
+          <p>
+            Décrivez votre besoin : rénovation, fuite, entretien, zinguerie ou isolation.
+            Nous revenons vers vous avec un diagnostic utile, un phasage cohérent et un devis détaillé.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <span>Téléphone</span>
+              <strong><a href="tel:+33491582467">04 91 58 24 67</a></strong>
+            </li>
+            <li>
+              <span>Email</span>
+              <strong><a href="mailto:contact@demotoiture.fr">contact@demotoiture.fr</a></strong>
+            </li>
+            <li>
+              <span>Adresse</span>
+              <strong>18 rue Jean Mermoz, 13008 Marseille</strong>
+            </li>
+            <li>
+              <span>Zone d'intervention</span>
+              <strong>Marseille, Aix-en-Provence, Aubagne et alentours</strong>
+            </li>
+          </ul>
+
+          <div class="contact-tags" aria-label="Engagements">
+            <p>Devis gratuit et détaillé</p>
+            <p>Intervention rapide</p>
+            <p>Matériaux de qualité</p>
+            <p>Suivi de chantier rigoureux</p>
+          </div>
+
+          <a class="btn btn-primary" href="tel:+33491582467">Appeler maintenant</a>
+        </article>
+
+        <form class="form-panel reveal" action="#" method="post" aria-label="Formulaire de demande de devis">
+          <header class="form-head">
+            <h3>Demande de devis toiture</h3>
+            <p>Réponse rapide avec première estimation et proposition de visite technique.</p>
+          </header>
+
+          <div class="form-grid">
+            <label class="field-wrap field-full">
+              <span>Nom et prénom</span>
+              <input class="field" type="text" name="nom" placeholder="Votre nom et prénom" required>
+            </label>
+
+            <label class="field-wrap">
+              <span>Téléphone</span>
+              <input class="field" type="tel" name="telephone" placeholder="06 12 34 56 78" required>
+            </label>
+
+            <label class="field-wrap">
+              <span>Email</span>
+              <input class="field" type="email" name="email" placeholder="vous@email.fr" required>
+            </label>
+
+            <label class="field-wrap">
+              <span>Type d'intervention</span>
+              <select name="service" required>
+                <option value="">Sélectionnez</option>
+                <option>Rénovation complète de toiture</option>
+                <option>Recherche de fuite</option>
+                <option>Zinguerie et gouttières</option>
+                <option>Démoussage et entretien</option>
+                <option>Isolation sous toiture</option>
+                <option>Dépannage après intempéries</option>
+              </select>
+            </label>
+
+            <label class="field-wrap">
+              <span>Surface estimée</span>
+              <input class="field" type="text" name="surface" placeholder="Ex: 120 m²">
+            </label>
+
+            <label class="field-wrap">
+              <span>Ville du chantier</span>
+              <input class="field" type="text" name="ville" placeholder="Ex: Marseille 8e" required>
+            </label>
+
+            <label class="field-wrap field-full">
+              <span>Votre besoin</span>
+              <textarea name="message" placeholder="Précisez l'état de la toiture, le niveau d'urgence, les accès et vos attentes..." required></textarea>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+            <p>Vos données sont utilisées uniquement pour traiter votre demande.</p>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <div><strong>TONENTREPRISE</strong> | Construire, rénover, sécuriser.</div>
-      <div>SIRET fictif : 824 563 917 00027 | Tous droits réservés <span id="year"></span></div>
+      <p><strong>DEMOTOITURE</strong> | Couvreur-zingueur, rénovation de toiture</p>
+      <p>Tous droits réservés <span data-year></span></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <a class="btn btn-primary mobile-call" href="tel:+33491582467">Appeler le 04 91 58 24 67</a>
+
+  <script src="js/roofing-premium.js" defer></script>
 </body>
 </html>
