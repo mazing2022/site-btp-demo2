@@ -590,8 +590,9 @@ textarea {
 
 .section-alt {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(236, 243, 251, 0.9)),
-    url("../images/roofing/texture-tiles.jpg") center / 1400px auto repeat;
+    linear-gradient(180deg, rgba(246, 250, 255, 0.5), rgba(228, 238, 249, 0.66)),
+    linear-gradient(120deg, rgba(12, 24, 40, 0.12), rgba(12, 24, 40, 0.04)),
+    url("../images/roofing/texture-tiles.jpg") center / cover no-repeat;
 }
 
 .section-dark {
@@ -812,6 +813,10 @@ textarea {
   color: var(--ink-500);
 }
 
+.about-content .section-label {
+  color: #ffffff !important;
+}
+
 .about-points {
   margin: 1.2rem 0 0;
   padding: 0;
@@ -825,7 +830,7 @@ textarea {
   position: relative;
   border-radius: 12px;
   border: 1px solid rgba(20, 29, 39, 0.1);
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.64);
   padding: 0.72rem 0.74rem 0.72rem 2rem;
   font-size: 0.88rem;
   color: #3f505f;
@@ -854,7 +859,7 @@ textarea {
 .about-stats article {
   border-radius: 14px;
   border: 1px solid rgba(20, 29, 39, 0.1);
-  background: linear-gradient(165deg, #ffffff, #edf3fa);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.72), rgba(234, 242, 251, 0.64));
   padding: 0.82rem 0.82rem 0.78rem;
 }
 
